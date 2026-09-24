@@ -17,8 +17,9 @@
 - **Copy tone:** calm, plain and respectful. Sellers are often under stress. Avoid "WE BUY HOUSES CASH!!" energy. No em dashes in social captions.
 
 ## Design system
-- **Palette:** neutral paper and graphite. Blue (`#1B5FE6`) is kept to a minimum: the logo, the "Get an offer" button in the header, and keyboard focus rings. The owner asked for less blue, so don't add it back.
-  - Light: page `#EFEFEC`, paper `#F8F8F6`, stone `#E2E2DE`, ink `#16181B`, slate `#51565D`, dark panel `#1D2024`, header and footer `#07090C`.
+- **Palette:** warm ivory, espresso and a little muted gold. Blue (`#1B5FE6`) is kept to a minimum: the logo, the "Get an offer" button in the header, and keyboard focus rings. The owner asked for less blue, so don't add it back.
+  - Light: page `#F3EFE7`, paper `#FAF8F3`, stone `#E6DFD0`, ink `#1E1A16`, slate `#5E564B`, dark panel `#2A251F`, header and footer `#12100D`.
+  - Muted gold: `--accent` `#A88A5A` for rules and markers, and `--accent-text` `#7D6238` for small text. It's used only on the hero kicker's circle marker, the situation numbers, the "How it works" step numbers and the form confirmation's left border. Keep it that sparse, and don't put `--accent-text` on stone because the contrast is too low.
   - Dark mode is handled with `prefers-color-scheme` and a `data-theme` attribute. All colors are CSS variables in `:root`.
 - **Type:** Newsreader (serif headlines), IBM Plex Sans (body text), IBM Plex Mono (small footer text only). All three load from Google Fonts.
 - **Shapes:** square 2px corners, thin rules, no shadows, no gradients, no pill-shaped buttons.
@@ -29,7 +30,7 @@
 1. Sticky header: logo, nav links, "Get an offer." On mobile, a Menu button opens a drawer (closes with Escape).
 2. Hero: "Every house has a next chapter." with the lede, calls to action, and three facts.
 3. `#what-we-buy`: nine situations in three groups. Each item has the anchor `#s-<key>`, used by the footer links.
-4. `#buying`: split band with "Selling a house" (stone) and "Buying or renting" (graphite).
+4. `#buying`: split band with "Selling a house" (stone) and "Buying or renting" (dark espresso panel).
 5. `#offer`: validated form plus the "How it works" steps (`#how`).
    - Links with `data-intent` preselect the form's situation.
    - The "buying" and "owner-financing" situations turn the address field into an optional "Where are you looking?"
@@ -41,3 +42,4 @@
 - [ ] Turn on GitHub Pages and connect Jaxkey's domain.
 - [ ] Get real project photos (before, during and after, taken from the same spot) for a future "Recent work" section.
 - [ ] Confirm whether Jaxkey pays cash.
+- [ ] Hero redesign, on hold until Jaxkey has a real photo. The owner picked a Dribbble reference ("Hero Section for a Real Estate Investment Company" by AbdulQudus): a full-width photo on top with the name and nav over it, a small curved tab in the photo's bottom-left corner holding a circle marker and short label, and a beige band below with a large headline on the left and the lede and one button on the right. Keep the seller-first copy; the owner decided against luxury or investor positioning. Don't use a stock or AI photo to fill the slot.
