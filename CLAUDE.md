@@ -3,6 +3,7 @@
 ## Who's who
 - **PrimeReach Digital** (primereachmktg.com) is the marketing agency that owns this project. The owner is the person you're working with.
 - **Jaxkey Properties** is the client: a real estate investor.
+- **The name is spelled "Jaxkey".** The key in the logo stands in for the K. Never write "Jaxey".
 - **What Jaxkey buys:** pre-foreclosures, probates, vacant, abandoned and condemned homes, and as-is homes in any condition.
 - **What Jaxkey does after buying:** fix and flips, rentals, and owner financing on select homes.
 - **Preview link:** https://claude.ai/artifact/9yjYDBAgMysH7ah7Qtz4pg. It mirrors `index.html` as an artifact fragment (no `<html>`, `<head>` or `<body>` tags).
