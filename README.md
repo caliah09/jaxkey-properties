@@ -19,7 +19,7 @@ Open `index.html` and search for `const SITE`:
 ```js
 const SITE = {
   email: '',   // where form inquiries are sent
-  phone: ''    // shown under "How it works" and in the footer
+  phone: ''    // shown under "What happens next" and in the footer
 };
 ```
 

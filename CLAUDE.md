@@ -19,22 +19,23 @@
 ## Design system
 - **Palette:** warm ivory, espresso and a little muted gold. Blue (`#1B5FE6`) is kept to a minimum: the logo, the "Get an offer" button in the header, and keyboard focus rings. The owner asked for less blue, so don't add it back.
   - Light: page `#F3EFE7`, paper `#FAF8F3`, stone `#E6DFD0`, ink `#1E1A16`, slate `#5E564B`, dark panel `#2A251F`, header and footer `#12100D`.
-  - Muted gold: `--accent` `#A88A5A` for rules and markers, and `--accent-text` `#7D6238` for small text. It's used only on the hero kicker's circle marker, the situation numbers, the "How it works" step numbers and the form confirmation's left border. Keep it that sparse, and don't put `--accent-text` on stone because the contrast is too low.
+  - Muted gold: `--accent` `#A88A5A` for rules and markers, and `--accent-text` `#7D6238` for small text. Right now it appears only on the form confirmation's left border. Keep it that sparse, and don't put `--accent-text` on stone because the contrast is too low.
   - Dark mode is handled with `prefers-color-scheme` and a `data-theme` attribute. All colors are CSS variables in `:root`.
-- **Type:** Newsreader (serif headlines), IBM Plex Sans (body text), IBM Plex Mono (small footer text only). All three load from Google Fonts.
+- **Type:** Newsreader (serif headlines) and IBM Plex Sans (everything else), both from Google Fonts.
 - **Shapes:** square 2px corners, thin rules, no shadows, no gradients, no pill-shaped buttons.
 - **The logo** is designed for a dark background, so it only appears on the black header and footer.
-- **Breakpoints:** 1100, 960 (grid collapses to one column), 900 (the selling / buying band stacks), 860 (menu button replaces the nav), 640 and 560. Tested down to 320px with no horizontal scroll.
+- **Breakpoints:** 1100, 960 (the form and "What happens next" stack), 860 (menu button replaces the nav), 640 (the "Houses we buy" rows stack) and 560. Tested down to 320px with no horizontal scroll.
+- **Avoid the AI-template look.** The owner said an earlier version looked like an AI template, so it was cut down on purpose. Don't bring back taglines, small labels above headlines, rows of three facts, numbered 01/02/03 items, spec tables or three-step sections. Write plain, specific sentences. The site will feel real once it has Jaxkey's real details (owner's name and photo, service area, real houses), so prefer adding those over adding design.
 
 ## Page structure
 1. Sticky header: logo, nav links, "Get an offer." On mobile, a Menu button opens a drawer (closes with Escape).
-2. Hero: "Every house has a next chapter." with the lede, calls to action, and three facts.
-3. `#what-we-buy`: nine situations in three groups. Each item has the anchor `#s-<key>`, used by the footer links.
-4. `#buying`: split band with "Selling a house" (stone) and "Buying or renting" (dark espresso panel).
-5. `#offer`: validated form plus the "How it works" steps (`#how`).
+2. Hero: "We buy houses in any condition." with one plain paragraph, the main button, and a link to the buying section.
+3. `#what-we-buy`, "Houses we buy": six situations as plain rows (name, one sentence). Each row has the anchor `#s-<key>`.
+4. `#buying`, "Looking for a home?": a dark panel with one paragraph, three items (`#s-fixflip`, `#s-rentals`, `#s-ownerfinancing`) and an "Ask what's available" link.
+5. `#offer`: validated form plus a short "What happens next" paragraph (`#how`).
    - Links with `data-intent` preselect the form's situation.
    - The "buying" and "owner-financing" situations turn the address field into an optional "Where are you looking?"
-6. Footer.
+6. Footer: logo, nav links, contact details once they're filled in, copyright and back to top.
 
 ## Open items
 - [ ] Get Jaxkey's email and phone, and fill in `const SITE` in `index.html`.
