@@ -8,25 +8,38 @@ Built and managed by PrimeReach Digital.
 
 | File | What it is |
 |---|---|
-| `index.html` | The whole site. HTML, CSS and JavaScript in one file. The logo is embedded, so nothing else needs to be uploaded. |
-| `logo.png` | The Jaxkey logo with a transparent background, kept here as a source file. |
+| `index.html` | The whole site: HTML, CSS and JavaScript in one file. |
+| `logo.webp` | The logo the site shows. |
+| `logo.png` | The original logo with a transparent background, kept as the source file. |
+| `favicon.svg` | Browser tab icon. |
+| `apple-touch-icon.png` | Home-screen icon for iPhones. |
 | `CLAUDE.md` | Client context and design rules for anyone (or any Claude session) working on the site. |
 
-## Before launch: fill in two settings
+Upload all of these together; the page loads the images from the same folder.
+
+## Before launch: fill in the settings
 
 Open `index.html` and search for `const SITE`:
 
 ```js
 const SITE = {
-  email: '',   // where form inquiries are sent
-  phone: ''    // shown under "What happens next" and in the footer
+  formEndpoint: 'https://formspree.io/f/xkjgzkpb',
+  email: '',
+  phone: '',
+  ownerName: '',
+  disclosure: ''
 };
 ```
 
-- **email**: the inquiry form sends through [FormSubmit](https://formsubmit.co). It's free and needs no account. The first inquiry triggers a one-time "activate" email to this address; click the link once, and every inquiry after that arrives as a table.
-- **phone**: shown as a tap-to-call link. Leave it blank and that line stays hidden.
+- **formEndpoint**: the inquiry form sends to this [Formspree](https://formspree.io) form, which emails each inquiry to the address set up in the Formspree dashboard. Send one test inquiry after launch and make sure it arrives.
+- **email**: Jaxkey's contact email, shown on the page.
+- **phone**: shown as a tap-to-call link, and as a Call button on phones.
+- **ownerName**: stored for later. It isn't shown on the page yet.
+- **disclosure**: the license disclosure, pasted exactly as the broker approved it. Shown under the form's button and in the footer.
 
-While `email` is blank, the form still validates the fields, but it tells the visitor plainly that the details were not sent.
+Any field left blank stays hidden, and the browser console lists the empty ones. If `formEndpoint` is blank, the form still checks the fields but tells the visitor plainly that nothing was sent.
+
+**Don't launch or run ads until `email`, `phone` and `disclosure` are filled in.**
 
 ## Hosting on GitHub Pages
 
