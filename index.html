@@ -1025,7 +1025,7 @@ const SITE = {
     /* the buying statement lights up word by word as you read down */
     SplitText.create('.statement', {
       type: 'words', autoSplit: true,
-      onSplit: (s) => g.fromTo(s.words, { opacity: 0.22 }, { opacity: 1, ease: 'none', stagger: 0.1, scrollTrigger: { trigger: '.statement', start: 'top 82%', end: 'bottom 48%', scrub: 0.6 } })
+      onSplit: (s) => g.fromTo(s.words, { opacity: 0.5 }, { opacity: 1, ease: 'none', stagger: 0.1, scrollTrigger: { trigger: '.statement', start: 'top 95%', end: 'bottom 70%', scrub: 0.6 } })
     });
     ScrollTrigger.refresh();
   });
