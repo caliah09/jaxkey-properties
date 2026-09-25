@@ -8,7 +8,8 @@
 <meta property="og:title" content="Jaxkey Properties">
 <meta property="og:description" content="Jaxkey Properties buys houses in any condition, including pre-foreclosures, probates, and vacant, abandoned or condemned homes. We fix them up and offer them for sale or rent, with owner financing on select homes.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#12100D">
+<meta name="theme-color" content="#12100D" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +46,9 @@
   --frame-muted: #A79E90;
   --frame-rule: rgba(241, 236, 227, 0.14);
   --frame-focus: #8FB3FF;
+  --band: #FAF8F3;
+  --band-rule: rgba(30, 26, 22, 0.14);
+  --header-rule: rgba(241, 236, 227, 0.14);
   --error: #A33420;
   --focus: #1B5FE6;
   --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
@@ -58,9 +62,9 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --page: #12100E;
-    --paper: #191613;
-    --stone: #1F1B17;
+    --page: #000000;
+    --paper: #0E0D0C;
+    --stone: #151311;
     --ink: #EEE8DE;
     --slate: #B2A898;
     --rule: rgba(238, 232, 222, 0.13);
@@ -69,21 +73,26 @@
     --accent-text: #C9A86F;
     --btn: #EEE8DE;
     --btn-hover: #FFFFFF;
-    --on-btn: #12100E;
-    --sheet: #25201B;
-    --sheet-muted: #B8AD9C;
-    --sheet-rule: rgba(240, 234, 224, 0.18);
-    --frame: #0A0908;
-    --frame-rule: rgba(241, 236, 227, 0.1);
+    --on-btn: #000000;
+    --sheet: #000000;
+    --sheet-line: #EEE8DE;
+    --sheet-muted: #B2A898;
+    --sheet-rule: rgba(238, 232, 222, 0.13);
+    --frame: #000000;
+    --frame-ink: #EEE8DE;
+    --frame-rule: rgba(238, 232, 222, 0.13);
+    --band: #000000;
+    --band-rule: transparent;
+    --header-rule: transparent;
     --error: #FF8E84;
     --focus: #8FB3FF;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --page: #12100E;
-  --paper: #191613;
-  --stone: #1F1B17;
+  --page: #000000;
+  --paper: #0E0D0C;
+  --stone: #151311;
   --ink: #EEE8DE;
   --slate: #B2A898;
   --rule: rgba(238, 232, 222, 0.13);
@@ -92,12 +101,17 @@
   --accent-text: #C9A86F;
   --btn: #EEE8DE;
   --btn-hover: #FFFFFF;
-  --on-btn: #12100E;
-  --sheet: #25201B;
-  --sheet-muted: #B8AD9C;
-  --sheet-rule: rgba(240, 234, 224, 0.18);
-  --frame: #0A0908;
-  --frame-rule: rgba(241, 236, 227, 0.1);
+  --on-btn: #000000;
+  --sheet: #000000;
+  --sheet-line: #EEE8DE;
+  --sheet-muted: #B2A898;
+  --sheet-rule: rgba(238, 232, 222, 0.13);
+  --frame: #000000;
+  --frame-ink: #EEE8DE;
+  --frame-rule: rgba(238, 232, 222, 0.13);
+  --band: #000000;
+  --band-rule: transparent;
+  --header-rule: transparent;
   --error: #FF8E84;
   --focus: #8FB3FF;
 }
@@ -197,13 +211,13 @@ a:hover .arrow, a:focus-visible .arrow, button:hover .arrow { transform: transla
 .site-header {
   position: sticky; top: 0; z-index: 50;
   background: var(--frame); color: var(--frame-ink);
-  border-bottom: 1px solid var(--frame-rule);
-  transition: transform var(--dur) var(--ease);
+  border-bottom: 1px solid var(--header-rule);
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 .site-header :focus-visible, .site-footer :focus-visible, .mbar :focus-visible { outline-color: var(--frame-focus); }
 .bar { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .bar > * { transition: transform var(--dur) var(--ease); }
-.site-header.is-compact { transform: translateY(calc(var(--header-h) * -0.2)); }
+.site-header.is-compact { transform: translateY(calc(var(--header-h) * -0.2)); border-bottom-color: var(--frame-rule); }
 .site-header.is-compact .bar > * { transform: translateY(calc(var(--header-h) * 0.1)); }
 .site-header.is-compact .brand { transform: translateY(calc(var(--header-h) * 0.1)) scale(0.8); }
 .brand { display: block; flex: none; padding-block: 8px; transform-origin: left center; }
@@ -244,7 +258,7 @@ a:hover .arrow, a:focus-visible .arrow, button:hover .arrow { transform: transla
 
 /* houses we buy */
 .section { padding: clamp(72px, 9vw, 120px) 0; }
-.situations { background: var(--paper); border-top: 1px solid var(--rule); }
+.situations { background: var(--band); border-top: 1px solid var(--band-rule); }
 .narrow { max-width: 920px; }
 .section-intro { margin: 18px 0 0; color: var(--slate); max-width: 52ch; }
 .buy-list { list-style: none; margin: clamp(36px, 4vw, 52px) 0 0; padding: 0; border-bottom: 1px solid var(--rule); }
@@ -272,7 +286,7 @@ a:hover .arrow, a:focus-visible .arrow, button:hover .arrow { transform: transla
 .homes :focus-visible { outline-color: var(--frame-focus); }
 
 /* offer */
-.offer { border-top: 1px solid var(--rule); }
+.offer { border-top: 1px solid var(--band-rule); }
 .offer-main { grid-column: 1 / span 7; }
 .offer-aside { grid-column: 9 / span 4; padding-top: 14px; }
 .offer-intro { color: var(--slate); max-width: 46ch; margin: 20px 0 0; }

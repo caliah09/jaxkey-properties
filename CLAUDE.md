@@ -31,7 +31,9 @@
 - **Palette:** warm ivory, espresso and a little muted gold. Blue (`#1B5FE6`) is kept to a minimum: the logo, the "Get an offer" button in the header, and keyboard focus rings. The owner asked for less blue, so don't add it back.
   - Light: page `#F3EFE7`, paper `#FAF8F3`, stone `#E6DFD0`, ink `#1E1A16`, slate `#5E564B`, dark panel `#2A251F`, header and footer `#12100D`.
   - Muted gold: `--accent` `#A88A5A` for rules and markers, and `--accent-text` `#7D6238` for small text. Right now it appears only on the form confirmation's left border. Keep it that sparse, and don't put `--accent-text` on stone because the contrast is too low.
-  - Dark mode is handled with `prefers-color-scheme` and a `data-theme` attribute. All colors are CSS variables in `:root`. A footer button cycles Auto / Light / Dark and saves the choice in `localStorage`.
+  - Dark mode is solid black, and the owner chose that on purpose. The header, every section and the footer are all `#000000` with no bands or dividing lines, so the page flows as one surface. The header's bottom line appears only once it compacts on scroll. Text is `#EEE8DE`, secondary text `#B2A898`, and form fields `#0E0D0C`. The `--band`, `--band-rule` and `--header-rule` variables are what switch between light mode's bands and dark mode's flow.
+  - Light mode keeps the ivory design, including the paper band behind "Houses we buy" and the dark "Looking for a home?" panel.
+  - Themes are handled with `prefers-color-scheme` and a `data-theme` attribute. All colors are CSS variables in `:root`. A footer button cycles Auto / Light / Dark and saves the choice in `localStorage`.
 - **Type:** Newsreader (serif headlines, optical sizing on) and IBM Plex Sans (everything else), both from Google Fonts. Headlines use `text-wrap: balance`, paragraphs `text-wrap: pretty`, and paragraphs stay under about 62ch. Use curly quotes and apostrophes.
 - **Shapes:** square 2px corners, thin rules, no shadows, no gradients, no pill-shaped buttons.
 - **Motion:** quiet and quick. Use only `--ease`, `--dur-fast` (180ms) and `--dur` (420ms).
@@ -51,7 +53,7 @@
 1. Sticky header: logo, nav links (the one for the section in view is underlined), "Get an offer." On mobile, a Menu button opens a drawer that traps focus and closes with Escape.
 2. Hero: "We buy houses in any condition." with one plain paragraph, the main button, and a link to the buying section.
 3. `#what-we-buy`, "Houses we buy": six situations as plain rows (name, one sentence). Each row has the anchor `#s-<key>`, and the whole row is a link to `#offer` with a matching `data-intent`. After the jump, the first empty field gets focus and the situation select briefly shows an outline.
-4. `#buying`, "Looking for a home?": a dark panel with one paragraph, three items (`#s-fixflip`, `#s-rentals`, `#s-ownerfinancing`) and an "Ask what's available" link.
+4. `#buying`, "Looking for a home?": a dark panel in light mode (plain black in dark mode) with one paragraph, three items (`#s-fixflip`, `#s-rentals`, `#s-ownerfinancing`) and an "Ask what's available" link.
 5. `#offer`: the form, split into "About the house" and "How to reach you", plus a short "What happens next" paragraph (`#how`).
    - Links with `data-intent` preselect the form's situation.
    - The "buying" and "owner-financing" situations turn the address field into an optional "Where are you looking?"
