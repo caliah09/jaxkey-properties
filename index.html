@@ -48,6 +48,7 @@
   --frame-rule: rgba(241, 236, 227, 0.14);
   --frame-focus: #8FB3FF;
   --progress: rgba(38, 84, 196, 0.55);
+  --hero-blue: #2654C4;
   --band: #FAF8F3;
   --band-rule: rgba(30, 26, 22, 0.14);
   --header-rule: rgba(241, 236, 227, 0.14);
@@ -92,6 +93,7 @@
     --header-rule: transparent;
     --error: #FF8E84;
     --focus: #8FB3FF;
+    --hero-blue: #4470E0;
   }
 }
 :root[data-theme="dark"] {
@@ -120,6 +122,7 @@
   --header-rule: transparent;
   --error: #FF8E84;
   --focus: #8FB3FF;
+  --hero-blue: #4470E0;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -249,7 +252,7 @@ a:hover .arrow, a:focus-visible .arrow, button:hover .arrow { transform: transla
 .hero-title { font-family: var(--serif); font-size: var(--fs-hero); line-height: 0.95; letter-spacing: -0.025em; }
 .ht-line { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
 .ht-rot { display: grid; }
-.rot-word { grid-area: 1 / 1; font-style: italic; color: var(--accent-text); }
+.rot-word { grid-area: 1 / 1; font-style: italic; color: var(--hero-blue); }
 .rot-word:not(:last-child) { visibility: hidden; }
 .anim .ht-line > span { visibility: hidden; }
 .hero-foot { margin-top: clamp(40px, 6vw, 88px); padding-top: 28px; border-top: 1px solid var(--rule); align-items: end; }
