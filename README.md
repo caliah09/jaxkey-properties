@@ -13,6 +13,8 @@ Built and managed by PrimeReach Digital.
 | `logo.png` | The original logo with a transparent background, kept as the source file. |
 | `favicon.svg` | Browser tab icon. |
 | `apple-touch-icon.png` | Home-screen icon for iPhones. |
+| `og-image.png` | Preview image shown when the link is shared (logo on dark background). |
+| `sitemap.xml` | Lists the page for Google. Submit it in Search Console. |
 | `CLAUDE.md` | Client context and design rules for anyone (or any Claude session) working on the site. |
 
 Upload all of these together; the page loads the images from the same folder.
@@ -24,8 +26,8 @@ Open `index.html` and search for `const SITE`:
 ```js
 const SITE = {
   formEndpoint: 'https://formspree.io/f/xkjgzkpb',
-  email: '',
-  phone: '',
+  email: 'kevisellison84@gmail.com',
+  phone: '(256) 345-4901',
   ownerName: '',
   disclosure: ''
 };
@@ -46,4 +48,4 @@ Any field left blank stays hidden, and the browser console lists the empty ones.
 1. Go to **Settings → Pages** in this repo.
 2. Under **Source**, choose **Deploy from a branch**, then pick `main` and `/ (root)`.
 3. The site goes live at `https://caliah09.github.io/jaxkey-properties/` within a minute or two.
-4. To use Jaxkey's own domain, enter it under **Custom domain** and add the DNS records GitHub lists.
+4. To use Jaxkey's own domain, enter it under **Custom domain** and add the DNS records GitHub lists. Then replace `https://caliah09.github.io/jaxkey-properties/` in `index.html` (canonical, `og:url`, `og:image`, JSON-LD) and `sitemap.xml`.

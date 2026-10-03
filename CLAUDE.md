@@ -9,6 +9,7 @@
 - **Possible future offer:** "sell as-is to Jaxkey, or list it with a licensed agent." Publish it only after his broker approves the wording.
 - **The name is spelled "Jaxkey".** The key in the logo stands in for the K. Never write "Jaxey".
 - **What Jaxkey buys:** pre-foreclosures, probates, vacant, abandoned and condemned homes, and as-is homes in any condition.
+- **Service area:** North Alabama (confirmed by the owner). Don't name specific cities or counties until the owner lists them.
 - **What Jaxkey does after buying:** fix and flips, rentals, and owner financing on select homes.
 - **Preview link:** https://claude.ai/artifact/9yjYDBAgMysH7ah7Qtz4pg. It mirrors `index.html` as an artifact fragment (no `<html>`, `<head>` or `<body>` tags). Publish `logo.webp`, `favicon.svg` and `apple-touch-icon.png` with it as supporting files.
 
@@ -25,7 +26,13 @@
 - `email` and `phone`: Jaxkey's contact details, shown under "What happens next" and in the footer. `phone` also adds a Call button to the mobile bar.
 - `ownerName`: stored for later, not shown on the page yet.
 - `disclosure`: the broker-approved license disclosure, shown under the form's button and in the footer above the copyright.
-- On load, the page logs a `console.warn` listing any empty fields. The LocalBusiness JSON-LD includes only the fields that have values.
+- On load, the page logs a `console.warn` listing any empty fields.
+- `phone` is a US number; the `tel:` links add `+1`.
+
+## SEO
+- The LocalBusiness JSON-LD is static in `<head>` (name, url, logo, image, description, telephone, email, `areaServed: North Alabama`). If `SITE.email` or `SITE.phone` changes, update it there too.
+- `<title>`, meta/OG description, the hero lede and the "Houses we buy" intro name North Alabama.
+- Canonical, `og:url`, `og:image` (`og-image.png`, the logo on `#12100D`, 1200×630) and `sitemap.xml` all use `https://caliah09.github.io/jaxkey-properties/`. Update all of them when the custom domain is connected.
 
 ## Design system
 - **Palette:** warm ivory, espresso and a little muted gold. Blue (`#1B5FE6`) is kept to a minimum: the logo, the "Get an offer" button in the header, keyboard focus rings, and the reading-progress line under the header, which the owner asked to be a faint deep blue (`--progress`, `rgba(38, 84, 196, 0.55)`). The hero's italic second line uses `--hero-line`: pure white `#FFFFFF` in dark mode (the owner's choice) and the same ink as the first line in light mode, where white wouldn't show. The owner asked for less blue, so don't add it back.
@@ -64,7 +71,7 @@
 7. Mobile bar (640px and below): "Tell us about your house →" appears once the hero button scrolls away and hides while the form is in view.
 
 ## Open items
-- [ ] Get Jaxkey's email and phone, and fill in `SITE.email` and `SITE.phone`.
+- [x] Get Jaxkey's email and phone, and fill in `SITE.email` and `SITE.phone`.
 - [ ] Get broker-approved license disclosure wording and fill in `SITE.disclosure`.
 - [ ] Don't launch or run ads until `SITE.email`, `SITE.phone` and `SITE.disclosure` are filled.
 - [ ] After launch, send one real test inquiry and confirm it arrives from Formspree. Check that Formspree accepts submissions from the site's domain.

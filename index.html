@@ -3,11 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Jaxkey Properties</title>
-<meta name="description" content="Jaxkey Properties buys houses in any condition, including pre-foreclosures, probates, and vacant, abandoned or condemned homes. We fix them up and offer them for sale or rent, with owner financing on select homes.">
+<title>Sell Your House As-Is in North Alabama | Jaxkey Properties</title>
+<meta name="description" content="Jaxkey Properties buys houses in any condition across North Alabama, including pre-foreclosures, probates, and vacant, abandoned or condemned homes. We fix them up and offer them for sale or rent, with owner financing on select homes.">
 <meta property="og:title" content="Jaxkey Properties">
-<meta property="og:description" content="Jaxkey Properties buys houses in any condition, including pre-foreclosures, probates, and vacant, abandoned or condemned homes. We fix them up and offer them for sale or rent, with owner financing on select homes.">
+<meta property="og:description" content="Jaxkey Properties buys houses in any condition across North Alabama, including pre-foreclosures, probates, and vacant, abandoned or condemned homes. We fix them up and offer them for sale or rent, with owner financing on select homes.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://caliah09.github.io/jaxkey-properties/">
+<meta property="og:image" content="https://caliah09.github.io/jaxkey-properties/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jaxkey Properties logo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://caliah09.github.io/jaxkey-properties/">
 <meta name="theme-color" content="#12100D" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -15,6 +22,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Jaxkey Properties",
+  "url": "https://caliah09.github.io/jaxkey-properties/",
+  "logo": "https://caliah09.github.io/jaxkey-properties/logo.png",
+  "image": "https://caliah09.github.io/jaxkey-properties/og-image.png",
+  "description": "Jaxkey Properties buys houses in any condition across North Alabama, including pre-foreclosures, probates, and vacant, abandoned or condemned homes. We fix them up and offer them for sale or rent, with owner financing on select homes.",
+  "telephone": "+1-256-345-4901",
+  "email": "kevisellison84@gmail.com",
+  "areaServed": { "@type": "AdministrativeArea", "name": "North Alabama" }
+}
+</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <script>
 /* Before first paint: apply a saved theme, and hold the hero for its entrance only when motion is allowed. */
@@ -486,7 +507,7 @@ textarea.input { min-height: 132px; resize: vertical; }
         </span>
       </h1>
       <div class="grid12 hero-foot">
-        <p class="lede">Behind on payments, inherited a house you don&rsquo;t want, or own one that&rsquo;s empty or falling apart? Tell us about it. We&rsquo;ll look at the house and make an offer on it as it is. You don&rsquo;t have to fix or clean anything, and you don&rsquo;t have to say yes.</p>
+        <p class="lede">Behind on payments, inherited a house you don&rsquo;t want, or own one in North Alabama that&rsquo;s empty or falling apart? Tell us about it. We&rsquo;ll look at the house and make an offer on it as it is. You don&rsquo;t have to fix or clean anything, and you don&rsquo;t have to say yes.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#offer" data-intent="sell" data-magnetic><span>Tell us about the house</span> <span class="arrow" aria-hidden="true">&rarr;</span></a>
           <a class="text-link" href="#buying">Looking for a home to buy or rent?</a>
@@ -499,7 +520,7 @@ textarea.input { min-height: 132px; resize: vertical; }
     <div class="wrap grid12">
       <div class="index-head">
         <h2 class="h2" id="sit-title" data-split>Houses we buy</h2>
-        <p class="intro">Most of the houses we buy fall into one of these situations. Choose the one that fits and we&rsquo;ll start the form for you.</p>
+        <p class="intro">We buy houses across North Alabama, and most of them fall into one of these situations. Choose the one that fits and we&rsquo;ll start the form for you.</p>
         <p class="sit-more">Don&rsquo;t see yours? <a class="text-link" href="#offer" data-intent="other">Tell us anyway <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
       </div>
       <ul class="buy-list">
@@ -692,8 +713,8 @@ textarea.input { min-height: 132px; resize: vertical; }
    ============================================================ */
 const SITE = {
   formEndpoint: 'https://formspree.io/f/xkjgzkpb',
-  email: '',
-  phone: '',
+  email: 'kevisellison84@gmail.com',
+  phone: '(256) 345-4901',
   ownerName: '',
   disclosure: ''
 };
@@ -713,7 +734,7 @@ const SITE = {
   const phone = SITE.phone.trim();
   const disclosure = SITE.disclosure.trim();
   const endpoint = SITE.formEndpoint.trim();
-  const tel = 'tel:' + phone.replace(/[^\d+]/g, '');
+  const tel = 'tel:+1' + phone.replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '');
   $$('[data-phone-link]').forEach((a) => {
     if (phone) { a.textContent = phone; a.href = tel; }
     else a.remove();
@@ -730,14 +751,6 @@ const SITE = {
     $('.form-foot').after(make('p', 'disclosure', disclosure));
     $('.foot-base').before(make('p', 'disclosure', disclosure));
   }
-
-  /* search engines: only details that have been filled in */
-  const ld = { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: 'Jaxkey Properties' };
-  if (phone) ld.telephone = phone;
-  if (email) ld.email = email;
-  const ldTag = make('script', '', JSON.stringify(ld));
-  ldTag.type = 'application/ld+json';
-  document.head.append(ldTag);
 
   /* theme: Auto / Light / Dark */
   const themeBtn = $('#theme-btn');
